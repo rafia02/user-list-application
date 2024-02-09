@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SingleUserCard from "./SingleUserCard";
-import { useQuery } from "@tanstack/react-query";
 import axios from 'axios';
 
 const UserList = () => {
@@ -15,20 +14,7 @@ const UserList = () => {
       .catch(error => console.error('Error fetching users: ', error));
   }, []);
 
-//   const {
-//     data: users = [],
-//     refetch,
-//     isLoading,
-//   } = useQuery({
-//     queryKey: [],
-//     queryFn: async () => {
-//       const res = await fetch(
-//         `https://doodleincblog.vercel.app/comment/${blogId}`
-//       );
-//       const result = await res.json();
-//       return result;
-//     },
-//   });
+
 console.log(users)
 
   const handleSearch = (event) => {

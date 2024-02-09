@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import SingleUserCard from "./SingleUserCard";
 import axios from "axios";
 import Spinner from "../Share/Spinner";

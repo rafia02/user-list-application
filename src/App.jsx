@@ -1,13 +1,11 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Rootlayout from "./Layout/Rootlayout";
 import UserList from "./Components/UserList/UserList";
 import UserDetails from "./Components/UserList/UserDetails";
 import AddUser from "./Components/AddUser/AddUser";
-import toast, { Toaster } from "react-hot-toast";
+import  { Toaster } from "react-hot-toast";
 
 export const router = createBrowserRouter([
   {

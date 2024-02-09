@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SingleUserCard from "./SingleUserCard";
-import axios from 'axios';
+import axios from "axios";
 import Spinner from "../Share/Spinner";
 
 const UserList = () => {
@@ -10,17 +10,17 @@ const UserList = () => {
   const [sortBy, setSortBy] = useState("");
 
   useEffect(() => {
-    axios.get('https://dummyjson.com/users')
-      .then(response => setUsers(response.data.users))
-      .catch(error => console.error('Error fetching users: ', error));
+    axios
+      .get("https://dummyjson.com/users")
+      .then((response) => setUsers(response.data.users))
+      .catch((error) => console.error("Error fetching users: ", error));
   }, []);
 
-if(!users){
-return <Spinner></Spinner>
-}
+  if (!users) {
+    return <Spinner></Spinner>;
+  }
 
-
-console.log(users)
+  console.log(users);
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -73,9 +73,7 @@ console.log(users)
       </div>
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {sortedUsers.map((user) => (
-        
-            <SingleUserCard key={user.id} user={user}></SingleUserCard>
-   
+          <SingleUserCard key={user.id} user={user}></SingleUserCard>
         ))}
       </div>
     </div>

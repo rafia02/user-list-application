@@ -46,19 +46,19 @@ console.log(users)
   });
 
   return (
-    <div className="container mx-auto">
-      <div className="flex justify-between items-center mt-8">
+    <div className="">
+      <div className="flex justify-between gap-2 items-center mt-8">
         <input
           type="text"
           placeholder="Search by name"
           value={searchTerm}
           onChange={handleSearch}
-          className="border border-gray-300 rounded px-4 py-2"
+          className="border border-gray-300 rounded  px-2 md:px-4 py-1 md:py-2"
         />
         <select
           value={sortBy}
           onChange={handleSort}
-          className="border border-gray-300 rounded px-4 py-2"
+          className="border border-gray-300 rounded px-2 md:px-4 py-1 md:py-2"
         >
           <option value="">Sort by...</option>
           <option value="name">Name</option>

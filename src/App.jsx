@@ -5,6 +5,7 @@ import './App.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Rootlayout from './Layout/Rootlayout'
 import UserList from './Components/UserList/UserList'
+import UserDetails from './Components/UserList/UserDetails'
 
 
 
@@ -18,19 +19,12 @@ export const router = createBrowserRouter([
           element: <UserList></UserList>
          },
          
-        //  {
-        //   path: "/blogdatails/:id",
-        //   element: <Blogdatails/>,
-        //   loader: async ( {params} ) => fetch(`https://doodleincblog.vercel.app/blog/${params.id}`)
-        //  },
-        //  {
-        //   path: "/allblogs",
-        //   element: <Allblogsmanage/>
-        //  },
-        //  {
-        //   path: "/favorite",
-        //   element: <Favorite/>
-        //  }
+         {
+          path: "/user/:id",
+          element: <UserDetails></UserDetails>,
+          loader: async ( {params} ) => fetch(`https://dummyjson.com/users/${params.id}`)
+         },
+
 
   ]
   }
@@ -46,11 +40,8 @@ function App() {
   
 
   return (
-    <div className='px-5 max-w-screen-xl mx-auto '>
-      
-      <RouterProvider router={router} ></RouterProvider>
-
-      
+    <div className='px-5 max-w-screen-xl mx-auto '>   
+      <RouterProvider router={router} ></RouterProvider>   
     </div>
   )
 }

@@ -6,7 +6,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Rootlayout from './Layout/Rootlayout'
 import UserList from './Components/UserList/UserList'
 import UserDetails from './Components/UserList/UserDetails'
-
+import AddUser from './Components/AddUser/AddUser'
+import toast, { Toaster } from 'react-hot-toast';
 
 
 export const router = createBrowserRouter([
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
           path: "/user/:id",
           element: <UserDetails></UserDetails>,
           loader: async ( {params} ) => fetch(`https://dummyjson.com/users/${params.id}`)
+         },
+         {
+          path: "/addUser",
+          element: <AddUser></AddUser>
          },
 
 
@@ -42,6 +47,7 @@ function App() {
   return (
     <div className='px-5 max-w-screen-xl mx-auto '>   
       <RouterProvider router={router} ></RouterProvider>   
+      <Toaster />
     </div>
   )
 }

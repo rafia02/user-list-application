@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Spinner from '../Share/Spinner'
 
 const SingleUserCard = ({ user }) => {
   console.log(user)
 
 
     if (!user) {
-    return <div>Loading...</div>
+    return <Spinner></Spinner>
   }
 
   return (
@@ -16,11 +17,6 @@ const SingleUserCard = ({ user }) => {
     <Link to = {`user/${user.id}`}>
         <h2 className="text-lg font-semibold">{user.firstName} {user.lastName}</h2>
         </Link>
-      {/* {
-        user.id && <Link to = {`user/${user.id}`}>
-        <h2 className="text-lg font-semibold">{user.firstName} {user.lastName}</h2>
-        </Link>
-      } */}
       <p className="text-sm text-gray-600">Email : {user.email}</p>
       <p className="text-sm text-gray-600">{user.address.address}, {user.address.city}</p>
       <p className="text-sm text-gray-600">Company Name : {user.company.name}</p>

@@ -21,7 +21,6 @@ const Navber = () => {
         <Link to="/addUser" className="text-sm md:text-lg font-semibold mx-4">
           Add User
         </Link>
-        {/* <Link to="/favorite" className='text-sm md:text-lg font-semibold mx-4' >Fovorite </Link> */}
       </div>
     </div>
   );
